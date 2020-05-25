@@ -42,12 +42,15 @@ export default function Home({
             </li>
           ))}
         </ul>
+        <Link href={'/about'}>
+          <a>toAbout</a>
+        </Link>
       </section>
     </Layout>
   )
 }
 
-export const  getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData()
   return {
     props: {

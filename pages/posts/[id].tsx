@@ -5,7 +5,9 @@ import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 import { GetStaticProps, GetStaticPaths } from 'next'
 
-export default function Post({ postData }: {
+export default function Post({
+  postData
+}: {
   postData: {
     title: string
     date: string
@@ -36,7 +38,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const  getStaticProps: any = async ({ params }: any) => {
+export const getStaticProps: any = async ({ params }: any) => {
   const postData = await getPostData(params.id)
   return {
     props: {
